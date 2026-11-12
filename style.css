@@ -1,0 +1,791 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+
+:root{
+  --bg:#081426;
+  --panel:#162943;
+  --border:#496988;
+  --text:#f3f8ff;
+  --muted:#b6cbdf;
+  --cyan:#7debf2;
+  --purple:#c5acff;
+  --green:#55e7ac;
+  --gold:#ffd47e;
+  --red:#ff8598;
+}
+*{box-sizing:border-box}
+html,body{margin:0;height:100%}
+body{
+  background:var(--bg);
+  color:var(--text);
+  font-family:Inter,Arial,sans-serif;
+  overflow:hidden;
+}
+button,input{font:inherit}
+button{cursor:pointer}
+button:disabled{opacity:.48;cursor:not-allowed}
+.app{
+  display:flex;
+  flex-direction:column;
+  height:100dvh;
+  background:
+    radial-gradient(ellipse at 90% 0%,#285b866c,transparent 49%),
+    radial-gradient(ellipse at 0% 100%,#5134885e,transparent 48%),
+    #081426;
+}
+.header{
+  flex-shrink:0;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:15px;
+  padding:12px 22px;
+  background:#09182cef;
+  border-bottom:1px solid #ffffff22;
+}
+.brand,.head-right{display:flex;align-items:center;gap:11px}
+.logo{
+  display:grid;
+  place-items:center;
+  height:46px;width:46px;
+  border-radius:13px;
+  background:linear-gradient(130deg,#0ebed5,#865df3);
+  font-weight:900;
+  font-size:26px;
+}
+.brand strong{display:block;font-size:18px}
+.brand small{
+  display:block;
+  color:var(--muted);
+  font-size:12px;
+  margin-top:5px;
+}
+.chip,.head-right button{
+  background:#1c3350;
+  border:1px solid #4c6a88;
+  border-radius:11px;
+  padding:10px 14px;
+  color:white;
+  font-size:13px;
+  font-weight:850;
+}
+.page-track,.time-track{
+  flex-shrink:0;
+  height:5px;
+  background:#1c3450;
+}
+#pageFill,#timeFill{
+  width:0;height:100%;
+  background:linear-gradient(90deg,var(--cyan),var(--purple));
+  transition:width .3s;
+}
+#content{
+  flex:1;
+  min-height:0;
+  overflow:auto;
+  padding:25px 34px 40px;
+  scrollbar-width:thin;
+  scrollbar-color:#557b9c transparent;
+}
+.slide{
+  max-width:1450px;
+  margin:auto;
+  animation:appear .25s ease;
+}
+@keyframes appear{
+  from{opacity:0;transform:translateY(12px)}
+  to{opacity:1;transform:translateY(0)}
+}
+.eyebrow{
+  color:var(--cyan);
+  font-weight:900;
+  font-size:17px;
+  letter-spacing:1.6px;
+  text-transform:uppercase;
+  margin-bottom:13px;
+}
+h1{
+  font-size:clamp(43px,5vw,77px);
+  line-height:1.12;
+  letter-spacing:-2px;
+  margin:9px 0 20px;
+}
+h2{
+  font-size:clamp(35px,3.55vw,55px);
+  line-height:1.2;
+  margin:9px 0 22px;
+}
+h3{
+  font-size:clamp(25px,2.15vw,35px);
+  line-height:1.3;
+  margin:0 0 15px;
+}
+p{
+  color:#dce8f6;
+  font-size:clamp(21px,1.75vw,28px);
+  line-height:1.84;
+}
+.gradient{
+  background:linear-gradient(90deg,#77f0ed,#a1b7ff,#d5adff);
+  color:transparent;
+  background-clip:text;
+}
+.grid2,.grid3{
+  display:grid;
+  gap:21px;
+  align-items:start;
+}
+.grid2{grid-template-columns:repeat(2,minmax(0,1fr))}
+.grid3{grid-template-columns:repeat(3,minmax(0,1fr))}
+.card{
+  min-width:0;
+  border:1px solid var(--border);
+  border-radius:21px;
+  padding:27px;
+  background:linear-gradient(145deg,#1b304a,#101f35);
+  box-shadow:0 12px 40px #0002;
+}
+.card.cyan{border-top:3px solid var(--cyan)}
+.card.purple{border-top:3px solid var(--purple)}
+.card.green{border-top:3px solid var(--green)}
+.card.gold{border-top:3px solid var(--gold)}
+.definition{
+  border:1px solid #497797;
+  border-radius:20px;
+  padding:26px 30px;
+  margin:20px 0;
+  background:linear-gradient(115deg,#1a3c50,#1c2948);
+}
+.definition h3{color:var(--cyan)}
+.definition p{margin:12px 0}
+.photo{
+  width:100%;
+  height:270px;
+  object-fit:cover;
+  border:1px solid #56708c;
+  border-radius:17px;
+}
+.photo.hero{height:360px}
+.note{
+  border-left:5px solid var(--gold);
+  background:#f9c56c17;
+  border-radius:0 13px 13px 0;
+  padding:18px 23px;
+  margin-top:19px;
+  color:#ffe6b0;
+  font-size:clamp(21px,1.7vw,27px);
+  line-height:1.65;
+}
+.badge-text{
+  display:inline-block;
+  border-radius:99px;
+  margin:6px 5px 6px 0;
+  padding:9px 14px;
+  color:#c2f0ff;
+  background:#28617d70;
+  font-size:16px;
+  font-weight:850;
+}
+
+/* НАҒЫЗ ТІК БӨЛШЕКТЕР */
+.frac{
+  display:inline-flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  vertical-align:middle;
+  line-height:1.08;
+  white-space:nowrap;
+  font-size:.9em;
+  margin:0 .09em;
+}
+.frac .num{
+  padding:0 .16em .08em;
+  border-bottom:2px solid currentColor;
+  min-width:1.05em;
+  text-align:center;
+}
+.frac .den{
+  padding:.08em .16em 0;
+  text-align:center;
+}
+sup{
+  font-size:.66em;
+  vertical-align:super;
+}
+sup .frac .num{border-bottom-width:1px}
+.math,.step,.task-formula,.game-formula{
+  font-family:"Cambria Math","STIX Two Math",Georgia,serif;
+}
+.math{
+  color:#9beeff;
+  background:#0b1c31;
+  border:1px solid #496e90;
+  border-radius:16px;
+  padding:20px 13px;
+  margin:18px 0;
+  text-align:center;
+  font-size:clamp(32px,3.3vw,51px);
+  font-weight:750;
+  line-height:1.65;
+  overflow-wrap:anywhere;
+}
+.root{
+  display:inline-flex;
+  align-items:center;
+  vertical-align:middle;
+  white-space:nowrap;
+}
+.root-index{
+  align-self:flex-start;
+  font-size:.38em;
+  margin-right:-.12em;
+}
+.root-sign{font-size:1.17em;line-height:1}
+.root-value{
+  border-top:2px solid currentColor;
+  padding:0 .12em;
+}
+.step{
+  padding:15px 19px;
+  margin:10px 0;
+  font-size:clamp(23px,2.08vw,31px);
+  line-height:1.65;
+  background:#0d2035;
+  border:1px solid #3e5e7d;
+  border-radius:12px;
+}
+.step b{color:var(--cyan)}
+
+/* КОНСПЕКТ — ДӘПТЕР ДИЗАЙНЫ */
+.notebook{
+  position:relative;
+  padding:26px 29px 30px 61px;
+  border:1px solid #7a9abc;
+  border-radius:19px;
+  background:
+    linear-gradient(to right,
+      transparent 43px,#d16b8277 44px,transparent 45px),
+    repeating-linear-gradient(to bottom,
+      #182d47 0px,#182d47 44px,
+      #50718b5b 45px,#182d47 46px);
+  box-shadow:0 14px 45px #0003;
+}
+.notebook h3{color:#90eff6}
+.notebook p{
+  font-size:clamp(22px,1.85vw,29px);
+  line-height:1.83;
+  margin:13px 0 20px;
+}
+.copy-label{
+  display:inline-block;
+  color:#122039;
+  background:#ffd581;
+  padding:9px 15px;
+  border-radius:10px;
+  font-size:16px;
+  font-weight:900;
+  margin-bottom:14px;
+}
+.notebook .math{background:#08192de8}
+.note-task{
+  margin:12px 0;
+  padding:17px 20px;
+  background:#0b2037;
+  border:1px solid #48698b;
+  border-radius:13px;
+  font-size:clamp(22px,1.9vw,29px);
+  line-height:1.65;
+}
+.answer-panel{
+  padding:17px 20px;
+  margin-top:10px;
+  border-radius:12px;
+  background:#164236;
+  color:#d6ffe8;
+  border:1px solid #4b967a;
+  font-size:clamp(20px,1.85vw,27px);
+  line-height:1.7;
+}
+[hidden]{display:none!important}
+.reveal{
+  padding:12px 18px;
+  background:#594c93;
+  color:white;
+  border:1px solid #9281bd;
+  border-radius:11px;
+  font-size:18px;
+  font-weight:850;
+  margin:10px 0 0;
+}
+.video-frame{
+  display:block;
+  aspect-ratio:16/9;
+  width:100%;
+  border:0;
+  border-radius:16px;
+  background:#071322;
+}
+.video-link{
+  display:inline-block;
+  text-decoration:none;
+  margin-top:12px;
+  padding:13px 17px;
+  border:1px solid #5393b5;
+  border-radius:11px;
+  color:#b7eeff;
+  font-size:18px;
+  font-weight:850;
+}
+.level-banner{
+  padding:19px 23px;
+  margin-bottom:18px;
+  background:#1c334e;
+  border:1px solid #5d7797;
+  border-radius:17px;
+}
+.level-banner strong{font-size:27px}
+.level-banner p{margin:8px 0 0}
+.tasks{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:15px;
+}
+.task{
+  min-width:0;
+  border:1px solid #476887;
+  background:#102239;
+  padding:22px;
+  border-radius:17px;
+}
+.task-head{
+  display:flex;
+  justify-content:space-between;
+  gap:10px;
+  color:#bed2e7;
+  font-size:16px;
+  font-weight:850;
+}
+.task-formula{
+  font-size:clamp(29px,2.65vw,42px);
+  line-height:1.7;
+  margin:18px 0;
+}
+.task-actions{
+  display:flex;
+  gap:8px;
+  flex-wrap:wrap;
+}
+.task input{
+  min-width:0;
+  width:175px;
+  padding:12px;
+  background:#091a2b;
+  border:1px solid #6886a5;
+  border-radius:10px;
+  color:#fff;
+  font-size:23px;
+}
+.task button{
+  padding:13px 16px;
+  border:1px solid #6585a4;
+  background:#285776;
+  color:white;
+  border-radius:10px;
+  font-weight:850;
+  font-size:17px;
+}
+.task .check{background:#17785c}
+.task .solution-btn{background:#614b90}
+.feedback{
+  min-height:22px;
+  font-size:20px;
+  margin-top:12px;
+}
+.feedback.good{color:var(--green)}
+.feedback.bad{color:var(--red)}
+.solution{
+  margin-top:11px;
+  padding:14px;
+  background:#17403d;
+  border-radius:10px;
+  font-size:23px;
+  line-height:1.7;
+}
+.homework{
+  border:1px solid #436483;
+  border-radius:12px;
+  margin:11px 0;
+  padding:16px 20px;
+  background:#10253a;
+  font-size:clamp(23px,2vw,32px);
+  line-height:1.7;
+}
+.center{text-align:center}
+.big-score{
+  color:var(--gold);
+  font-size:clamp(80px,9vw,135px);
+  font-weight:900;
+}
+
+/* ҮШ КОМАНДАЛЫҚ ОЙЫН */
+.teams{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:15px;
+  margin:17px 0 23px;
+}
+.team{
+  border:2px solid #4c6989;
+  background:#152a43;
+  border-radius:18px;
+  padding:18px;
+  text-align:center;
+  min-width:0;
+}
+.team.active{
+  border-color:#81f2ee;
+  background:linear-gradient(135deg,#1b5a69,#183959);
+}
+.team.winner{
+  border-color:var(--gold);
+  background:linear-gradient(135deg,#625026,#233c50);
+}
+.team-name{
+  font-size:clamp(18px,1.7vw,27px);
+  font-weight:900;
+  color:#e5f4ff;
+}
+.team-score{
+  margin:8px 0;
+  font-size:clamp(43px,4.5vw,69px);
+  font-weight:900;
+  color:var(--cyan);
+}
+.team-status{
+  font-size:14px;
+  font-weight:800;
+  color:#ffd47e;
+  min-height:18px;
+}
+.game-question{
+  padding:25px;
+  border-radius:21px;
+  border:1px solid #5989ad;
+  background:linear-gradient(120deg,#183a52,#252349);
+  text-align:center;
+}
+.game-meta{
+  display:flex;
+  justify-content:space-between;
+  gap:12px;
+  font-size:16px;
+  color:#c6d9ed;
+  font-weight:850;
+}
+.game-question h3{
+  margin:18px 0 0;
+  color:var(--cyan);
+}
+.game-formula{
+  font-size:clamp(35px,4vw,64px);
+  line-height:1.6;
+  font-weight:850;
+  padding:15px;
+  overflow-wrap:anywhere;
+}
+.options{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:15px;
+  margin:21px 0;
+}
+.option{
+  display:flex;
+  align-items:center;
+  gap:21px;
+  min-width:0;
+  min-height:110px;
+  text-align:left;
+  color:white;
+  padding:19px 24px;
+  border-radius:17px;
+  background:#1a3353;
+  border:2px solid #57789c;
+  font-family:"Cambria Math",Georgia,serif;
+  font-size:clamp(30px,3vw,46px);
+  font-weight:850;
+}
+.option:not(:disabled):hover{
+  background:#28527b;
+  border-color:var(--cyan);
+}
+.option.correct{
+  opacity:1;
+  background:#145a42;
+  border-color:#4fe9a8;
+}
+.option.wrong{
+  opacity:1;
+  background:#693247;
+  border-color:#ff7d91;
+}
+.option-letter{
+  flex-shrink:0;
+  display:grid;
+  place-items:center;
+  width:52px;height:52px;
+  font:900 24px Inter,Arial,sans-serif;
+  border-radius:12px;
+  background:#355a81;
+}
+.game-feedback{
+  padding:10px 20px;
+  text-align:center;
+  font-size:25px;
+  line-height:1.6;
+}
+.game-feedback.good{color:var(--green)}
+.game-feedback.bad{color:var(--red)}
+.game-next{
+  border:0;
+  border-radius:13px;
+  padding:16px 28px;
+  font-weight:900;
+  font-size:23px;
+  color:white;
+  background:linear-gradient(115deg,#0999b8,#7658e2);
+  margin-top:13px;
+}
+.game-summary{
+  text-align:center;
+  padding:27px;
+  border:1px solid #a88e51;
+  border-radius:19px;
+  background:#63502422;
+}
+
+/* ТӨМЕНГІ ЖОЛАҚ */
+.footer{
+  flex-shrink:0;
+  background:#091727f5;
+  border-top:1px solid #3b5878;
+}
+.info-row{
+  display:flex;
+  align-items:center;
+  gap:9px;
+  padding:9px 20px;
+}
+.info{
+  display:flex;
+  flex:1;
+  min-width:105px;
+  flex-direction:column;
+  gap:5px;
+  padding:8px 12px;
+  background:#152b44;
+  border:1px solid #42607c;
+  border-radius:11px;
+}
+.info span{
+  color:var(--muted);
+  font-size:12px;
+}
+.info strong{
+  color:var(--cyan);
+  font-size:20px;
+  font-weight:900;
+  font-variant-numeric:tabular-nums;
+}
+#remaining{color:var(--gold);font-size:25px}
+#remaining.finished{color:var(--red)}
+.info-row button{
+  padding:12px 14px;
+  color:white;
+  background:#254c72;
+  border:1px solid #5a82a5;
+  border-radius:10px;
+  font-size:13px;
+  font-weight:850;
+  white-space:nowrap;
+}
+.bottom-nav{
+  padding:10px 20px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+}
+.foot-left,.nav-actions{
+  display:flex;
+  flex-wrap:wrap;
+  align-items:center;
+  gap:12px;
+}
+.foot-left strong{
+  color:var(--cyan);
+  font-size:13px;
+  letter-spacing:1.3px;
+}
+.foot-left span{
+  color:var(--muted);
+  font-size:12px;
+}
+.nav-actions{margin-left:auto}
+.nav-actions button{
+  background:#284a6c;
+  color:white;
+  border:1px solid #547a9e;
+  border-radius:10px;
+  padding:12px 22px;
+  font-size:15px;
+  font-weight:850;
+}
+.nav-actions .primary{
+  background:linear-gradient(110deg,#1497b9,#7859eb);
+  border:0;
+}
+
+/* КАЛЬКУЛЯТОР */
+.calculator{
+  position:fixed;
+  z-index:100;
+  min-width:235px;
+  max-width:min(480px,95vw);
+  max-height:80dvh;
+  overflow:auto;
+  resize:both;
+  padding:12px;
+  border:1px solid #8ba6c3;
+  border-radius:19px;
+  background:linear-gradient(145deg,#2a4361,#142640);
+  box-shadow:0 22px 65px #000a;
+  touch-action:none;
+  font-size:15px;
+}
+.calc-header{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:7px;
+  cursor:grab;
+  user-select:none;
+  padding-bottom:10px;
+}
+.calc-header strong{font-size:.92em}
+.calc-header>div{display:flex;gap:5px}
+.calc-header button{
+  width:29px;height:29px;
+  background:#3d5b7b;
+  border:0;
+  border-radius:8px;
+  color:white;
+  font-weight:900;
+}
+.calc-screen{
+  width:100%;
+  height:64px;
+  border:1px solid #5a7c9d;
+  border-radius:10px;
+  padding:12px;
+  background:#081829;
+  color:#92f3d3;
+  font-size:1.35em;
+  font-weight:750;
+  text-align:right;
+  outline:none;
+}
+.calc-mode{
+  color:#b9cde4;
+  font-size:11px;
+  margin-bottom:9px;
+}
+.calc-keys{
+  display:grid;
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:6px;
+  margin:10px 0;
+}
+.science-keys{grid-template-columns:repeat(5,minmax(0,1fr))}
+.calc-keys button{
+  min-width:0;
+  min-height:41px;
+  color:white;
+  background:#35516e;
+  border:1px solid #56738e;
+  border-radius:9px;
+  font-size:1em;
+  font-weight:850;
+}
+.science-keys button{font-size:.83em}
+.calc-keys .equals{background:#168675}
+.calc-keys .danger{background:#874453}
+.calc-keys .wide{grid-column:span 2}
+.calculator small{
+  display:block;
+  color:#b0c8e0;
+  font-size:10px;
+  text-align:center;
+}
+.calc-launch{
+  position:fixed;
+  z-index:90;
+  bottom:158px;
+  background:#245780;
+  border:1px solid #83afd4;
+  border-radius:12px;
+  padding:11px 16px;
+  color:white;
+  font-size:13px;
+  font-weight:850;
+  box-shadow:0 9px 24px #0007;
+}
+.calc-launch.left{left:16px}
+.calc-launch.right{right:16px}
+
+@media(max-width:1050px){
+  .grid2,.grid3,.tasks{grid-template-columns:1fr}
+  .header{padding:9px 12px}
+  .brand small{display:none}
+  #content{padding:17px 13px}
+  .card,.definition{padding:19px}
+  p,.notebook p{font-size:20px}
+  .math{font-size:31px}
+  .info-row{flex-wrap:wrap;padding:7px}
+  .info{min-width:85px}
+  .info strong{font-size:15px}
+  .info span{font-size:10px}
+  #remaining{font-size:18px}
+  #pageTitle,#timerStatus{display:none}
+  .bottom-nav{padding:9px}
+  .nav-actions button{font-size:12px;padding:10px}
+  .calc-launch{bottom:175px}
+}
+@media(max-width:600px){
+  .chip{display:none}
+  .logo{width:36px;height:36px;font-size:19px}
+  .brand strong{font-size:13px}
+  .info-row{
+    display:grid;
+    grid-template-columns:repeat(4,minmax(0,1fr));
+  }
+  .info{padding:6px;min-width:0}
+  .info strong{font-size:12px}
+  .info span{font-size:9px}
+  .info-row button{padding:7px;font-size:11px}
+  .notebook{padding:18px 16px 19px 32px}
+  .teams{gap:7px}
+  .team{padding:10px 5px}
+  .team-name{font-size:12px}
+  .team-score{font-size:31px}
+  .team-status{font-size:10px}
+  .game-question{padding:14px}
+  .game-meta{font-size:11px}
+  .options{gap:8px}
+  .option{min-height:76px;gap:9px;padding:10px;font-size:25px}
+  .option-letter{width:35px;height:35px;font-size:17px}
+  .game-next{font-size:17px}
+  .calc-launch{bottom:190px;font-size:11px;padding:9px}
+  .calculator{width:250px!important}
+}

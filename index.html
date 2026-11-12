@@ -1,0 +1,125 @@
+
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width,initial-scale=1.0">
+  <meta name="theme-color" content="#081426">
+  <title>MATH LAB | Рационал және иррационал дәреже</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+<div class="app">
+
+  <header class="header">
+    <div class="brand">
+      <div class="logo">xⁿ</div>
+      <div>
+        <strong>MATH LAB</strong>
+        <small>Рационал және иррационал көрсеткішті дәреже</small>
+      </div>
+    </div>
+
+    <div class="head-right">
+      <span class="chip">1 КУРС</span>
+      <span class="chip">80 МИНУТ</span>
+      <span class="chip">⭐ <b id="taskScore">0</b> ұпай</span>
+      <button onclick="toggleFullscreen()" title="Толық экран">⛶</button>
+    </div>
+  </header>
+
+  <div class="page-track">
+    <div id="pageFill"></div>
+  </div>
+
+  <main id="content"></main>
+
+  <footer class="footer">
+    <div class="info-row">
+      <div class="info">
+        <span>🕒 Алматы уақыты</span>
+        <strong id="liveClock">--:--:--</strong>
+      </div>
+      <div class="info">
+        <span>🌡 Ауа температурасы</span>
+        <strong id="weather">Жүктелуде...</strong>
+      </div>
+      <div class="info">
+        <span>⏳ Қалған уақыт</span>
+        <strong id="remaining">80:00</strong>
+      </div>
+      <div class="info">
+        <span>⏱ Өткен уақыт</span>
+        <strong id="elapsed">00:00</strong>
+      </div>
+      <button id="timerStart" onclick="startLesson()">▶ Бастау</button>
+      <button id="timerPause" onclick="pauseLesson()">⏸ Үзіліс</button>
+    </div>
+
+    <div class="time-track"><div id="timeFill"></div></div>
+
+    <div class="bottom-nav">
+      <div class="foot-left">
+        <strong>BY DARKHAN</strong>
+        <span id="pageCounter">1 / 24</span>
+        <span id="pageTitle">Кіріспе</span>
+        <span id="timerStatus">Сабақ басталған жоқ</span>
+      </div>
+
+      <div class="nav-actions">
+        <button id="backBtn" onclick="prevPage()">← Артқа</button>
+        <button id="nextBtn" class="primary"
+                onclick="nextPage()">Келесі →</button>
+      </div>
+    </div>
+  </footer>
+</div>
+
+<!-- Калькуляторларды ашатын батырмалар -->
+<button class="calc-launch left"
+        onclick="showCalc('simple')">🧮 Қарапайым</button>
+
+<button class="calc-launch right"
+        onclick="showCalc('science')">∑ Ғылыми</button>
+
+<!-- Сол жақ калькулятор -->
+<section class="calculator" id="calc-simple"
+         style="left:16px;top:105px;width:285px">
+  <div class="calc-header">
+    <strong>🧮 Қарапайым калькулятор</strong>
+    <div>
+      <button onclick="resizeCalc('simple',-1)">−</button>
+      <button onclick="resizeCalc('simple',1)">+</button>
+      <button onclick="hideCalc('simple')">×</button>
+    </div>
+  </div>
+  <input id="screen-simple" class="calc-screen"
+         value="0" spellcheck="false"
+         aria-label="Қарапайым калькулятор">
+  <div id="keys-simple" class="calc-keys"></div>
+  <small>Бос жерінен ұстап жылжытуға болады</small>
+</section>
+
+<!-- Оң жақ калькулятор -->
+<section class="calculator" id="calc-science"
+         style="right:16px;top:105px;width:360px">
+  <div class="calc-header">
+    <strong>∑ Ғылыми калькулятор</strong>
+    <div>
+      <button onclick="resizeCalc('science',-1)">−</button>
+      <button onclick="resizeCalc('science',1)">+</button>
+      <button onclick="hideCalc('science')">×</button>
+    </div>
+  </div>
+  <div class="calc-mode">DEG — бұрыштар градуспен</div>
+  <input id="screen-science" class="calc-screen"
+         value="0" spellcheck="false"
+         aria-label="Ғылыми калькулятор">
+  <div id="keys-science" class="calc-keys science-keys"></div>
+  <small>sin, cos, tan, cot, түбір, дәреже, логарифм</small>
+</section>
+
+</body>
+</html>
